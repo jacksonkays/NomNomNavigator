@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NomNomNavigator</title>
+    <script>
+      function searchRestaurants() {
+        var location = document.getElementById("location").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+          "GET",
+          "https://api.yelp.com/v3/businesses/search?term=restaurants&location=" +
+            location +
+            "&sort_by=rating",
+          true
+        );
+        xhr.setRequestHeader("Authorization", "Bearer k0VjlPmxdN_bkNew-SwPJiCa5Ng5MPZ0ho--4FR16Xew8HQ6CLerOeGtCokj5HHARNP5b-dnmy_oe39uDFM1Jc7-3bU_moHsLauZF5V9PYrLwqQv4WFFqgt7aBUJZHYx");
+        xhr.onreadystatechange = function() {
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            var response = JSON.parse(this.responseText);
+            var firstResult = response.businesses[0];
+            document.getElementById("result").innerHTML = firstResult.name;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>NomNomNavigator</h1>
+    <input type="text" id="location" placeholder="Enter a location">
+    <button onclick="searchRestaurants()">Find Best Restaurant</button>
+    <div id="result"></div>
+  </body>
+</html>

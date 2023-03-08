@@ -1,0 +1,16 @@
+input {
+    color: white;
+  }
+  
+  body {
+      background-color: red; 
+  }
+  
+  .result {
+      color: white;
+  }
+  
+  button {
+  background-color:white;
+  color:red
+  }
