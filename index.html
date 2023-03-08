@@ -15,7 +15,6 @@
         );
         xhr.setRequestHeader("Authorization", "Bearer k0VjlPmxdN_bkNew-SwPJiCa5Ng5MPZ0ho--4FR16Xew8HQ6CLerOeGtCokj5HHARNP5b-dnmy_oe39uDFM1Jc7-3bU_moHsLauZF5V9PYrLwqQv4WFFqgt7aBUJZHYx");
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-        xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         xhr.onreadystatechange = function() {
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             var response = JSON.parse(this.responseText);
