@@ -1,1 +1,3 @@
 Creating Branch for this repo
+
+RIP, Yelp API doesn't support CORS, means I can't call from my front-end JS, not my fault it's ChatGPT
